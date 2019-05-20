@@ -10,10 +10,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\blueberry-muffins.jpg" />
+    <None Remove="Images\burger.jpg" />
+    <None Remove="Images\eggs-benedict.jpg" />
+    <None Remove="Images\ham.jpg" />
+    <None Remove="Images\potato-salad.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\blueberry-muffins.jpg" />
+    <EmbeddedResource Include="Images\burger.jpg" />
+    <EmbeddedResource Include="Images\eggs-benedict.jpg" />
+    <EmbeddedResource Include="Images\ham.jpg" />
+    <EmbeddedResource Include="Images\potato-salad.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="ViewCells\RecipeCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ViewCells\RecommendedRecipeCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\EditRecipePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -23,9 +45,5 @@
     <EmbeddedResource Update="Views\SamplePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Images\" />
   </ItemGroup>
 </Project>
