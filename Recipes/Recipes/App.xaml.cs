@@ -1,4 +1,5 @@
 ﻿using System;
+using Recipes.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace Recipes
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new RecipePage());
         }
 
         protected override void OnStart()

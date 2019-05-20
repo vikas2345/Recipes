@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Recipes.Views.SamplePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Recipes.Model">
+    <ContentPage.Content>
+
+        <ListView
+            GroupDisplayBinding="{Binding Title}"
+            GroupShortNameBinding="{Binding ShortName}"
+            HasUnevenRows="True"
+            IsGroupingEnabled="True"
+            ItemsSource="{x:Static local:RecipeData.AllRecipesGrouped}"
+            SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate />
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

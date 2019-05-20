@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Recipes/Recipes/Model/ListViewGrouping.cs
+/Recipes/Recipes/Model/Recipe.cs
+/Recipes/Recipes/Model/RecipeData.cs
