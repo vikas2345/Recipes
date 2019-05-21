@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Foodie.RecipeDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:Recipes.Converter"
+    Title="Details"
+    BindingContext="{x:Static local:RecipeData.SingleRecipe}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:RecipeToImageValueConverter x:Key="imageConverter" Assembly="Recipes.Images" />
+
+            <Style x:Key="centerAlignStyle" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style
+                x:Key="prepInfoStyle"
+                BasedOn="{StaticResource centerAlignStyle}"
+                TargetType="Label">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+            </Style>
+
+            <Style x:Key="microLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="TextColor" Value="#3F51B5" />
+            </Style>
+
+            <Style x:Key="multiLineTextStyle" TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Start" />
+                <Setter Property="Margin" Value="10,0,0,10" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView VerticalOptions="FillAndExpand">
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image
+                        Grid.Row="0"
+                        Grid.RowSpan="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Aspect="AspectFill"
+                        Source="{Binding ImageName, Converter={StaticResource imageConverter}}" />
+                    <BoxView
+                        Grid.Row="0"
+                        Grid.RowSpan="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Opacity="0.25"
+                        Color="#757575" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="-30,5,0,0"
+                        FontAttributes="Bold"
+                        FontSize="28"
+                        Text="{Binding RecipeName}"
+                        TextColor="#FFFFFF" />
+
+
+
+                    <BoxView
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Color="#3F51B5" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Style="{StaticResource prepInfoStyle}"
+                        Text="{Binding PreparationTime, StringFormat='prep {0}'}" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Style="{StaticResource prepInfoStyle}"
+                        Text="{Binding CookTime, StringFormat='cook {0}'}" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Style="{StaticResource prepInfoStyle}"
+                        Text="{Binding NumberOfServings, StringFormat='serves {0}'}" />
+
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        FontSize="Large"
+                        Style="{StaticResource centerAlignStyle}"
+                        Text="{Binding MealType}"
+                        TextColor="#4CAF50" />
+
+                    <Label
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Style="{StaticResource centerAlignStyle}"
+                        Text="{Binding Difficulty, StringFormat='** {0} difficulty **'}"
+                        TextColor="#3F51B5" />
+
+                    <Label
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Style="{StaticResource microLabelStyle}"
+                        Text="Ingredients" />
+                    <Label
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Style="{StaticResource multiLineTextStyle}"
+                        Text="{Binding Ingredients}" />
+
+                    <Label
+                        Grid.Row="8"
+                        Grid.Column="0"
+                        Style="{StaticResource microLabelStyle}"
+                        Text="Directions" />
+                    <Label
+                        Grid.Row="9"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Style="{StaticResource multiLineTextStyle}"
+                        Text="{Binding Directions}" />
+                </Grid>
+            </ScrollView>
+            <Button Text="Make Again!" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -6,7 +6,7 @@
     xmlns:converter="clr-namespace:Recipes.Converter"
     xmlns:local="clr-namespace:Recipes.Model"
     Height="200">
-    <ContentView Margin="10">
+    <ContentView Style="{StaticResource overallCellContentStyle}">
         <ContentView.Resources>
             <ResourceDictionary>
                 <converter:RecipeToImageValueConverter x:Key="imageConvert" Assembly="Recipes.Images" />
@@ -90,25 +90,20 @@
                 Grid.Row="3"
                 Grid.Column="0"
                 Margin="10,5,0,0"
-                FontSize="Small"
-                Text="{Binding PreparationTime, StringFormat='prep {0} '}"
-                TextColor="#757575" />
+                Style="{StaticResource cellPrepDetailsStyle}"
+                Text="{Binding PreparationTime, StringFormat='prep {0} '}" />
 
             <Label
                 Grid.Row="3"
                 Grid.Column="1"
-                Margin="0,5,0,0"
-                FontSize="Small"
-                Text="{Binding CookTime, StringFormat='cook {0}'}"
-                TextColor="#757575" />
+                Style="{StaticResource cellPrepDetailsStyle}"
+                Text="{Binding CookTime, StringFormat='cook {0}'}" />
 
             <Label
                 Grid.Row="3"
                 Grid.Column="2"
-                Margin="0,5,0,0"
-                FontSize="Small"
-                Text="{Binding NumberOfServings, StringFormat='serves {0}'}"
-                TextColor="#757575" />
+                Style="{StaticResource cellPrepDetailsStyle}"
+                Text="{Binding NumberOfServings, StringFormat='serves {0}'}" />
 
             <Label
                 Grid.Row="4"

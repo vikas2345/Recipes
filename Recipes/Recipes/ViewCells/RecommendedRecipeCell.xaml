@@ -1,10 +1,55 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Recipes.ViewCells.RecommendedRecipeCell">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
-</ContentView>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ViewCell
+    x:Class="Foodie.RecommendedRecipeCell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ViewCell.Height>
+        <OnPlatform
+            x:TypeArguments="x:Double"
+            Android="95"
+            iOS="90" />
+    </ViewCell.Height>
+    <ContentView Style="{StaticResource overallCellContentStyle}">
+        <Grid ColumnSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15" />
+                <RowDefinition Height="1.1*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="0"
+                BackgroundColor="#4CAF50"
+                FontAttributes="Bold"
+                FontSize="Micro"
+                HorizontalTextAlignment="Center"
+                Text="RECOMMENDED"
+                TextColor="#FFFFFF" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="5,0,0,0"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Text="{Binding RecipeName}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Style="{StaticResource cellPrepDetailsStyle}"
+                Text="{Binding PreparationTime, StringFormat='Prep: {0}'}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Style="{StaticResource cellPrepDetailsStyle}"
+                Text="{Binding CookTime, StringFormat='Cook: {0}'}" />
+        </Grid>
+    </ContentView>
+</ViewCell>

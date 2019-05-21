@@ -17,6 +17,7 @@
             GroupDisplayBinding="{Binding Title}"
             HasUnevenRows="True"
             IsGroupingEnabled="True"
+            ItemSelected="Recipe_ItemSelected"
             ItemTemplate="{StaticResource recipeTemplateSel}"
             ItemsSource="{x:Static local:RecipeData.AllRecipesGrouped}"
             SeparatorVisibility="None" />

@@ -1,8 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Recipes.App">
+<Application
+    x:Class="Recipes.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
+        <ResourceDictionary>
+
+            <!--  The Colors  -->
+            <Color x:Key="DarkPrimary">#E64A19</Color>
+            <Color x:Key="Primary">#FF5722</Color>
+            <Color x:Key="LightPrimary">#FFCCBC</Color>
+
+            <Color x:Key="PrimaryText">#212121</Color>
+            <Color x:Key="SecondaryText">#757575</Color>
+            <Color x:Key="LightText">#FFFFFF</Color>
+
+            <Color x:Key="Background">#FFFFFF</Color>
+            <Color x:Key="LightPrimaryBackground">#F6F6F6</Color>
+
+            <Color x:Key="Accent">#4CAF50</Color>
+            <Color x:Key="AlternateAccent">#3F51B5</Color>
+
+            <Color x:Key="TrueColor">#16CA86</Color>
+            <Color x:Key="FalseColor">#FF4081</Color>
+            <Color x:Key="PositiveAction">#4CAF50</Color>
+            <Color x:Key="NegativeAction">#D52941</Color>
+
+            <!--  Bold Recommended Cell Colors  -->
+            <Color x:Key="BoldPrimaryText">#35A7FF</Color>
+            <Color x:Key="BoldLightPrimaryBackground">#C9F9CD</Color>
+            <Color x:Key="BoldLightText">#FFE74C</Color>
+            <Color x:Key="BoldAccent">#FF5964</Color>
+            <Color x:Key="BoldSecondaryText">#6CBFFF</Color>
+
+            <Style x:Key="overallCellContentStyle" TargetType="ContentView">
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="BackgroundColor" Value="{StaticResource lightBackgroundColor}" />
+            </Style>
+
+            <Style x:Key="cellPrepDetailsStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Margin" Value="0,5,0,0" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryText}" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="BackgroundColor" Value="#4CAF50" />
+            </Style>
+
+        </ResourceDictionary>
+
 
     </Application.Resources>
 </Application>
