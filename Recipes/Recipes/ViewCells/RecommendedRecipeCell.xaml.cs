@@ -15,6 +15,8 @@ namespace Recipes.ViewCells
 		public RecommendedRecipeCell ()
 		{
 			InitializeComponent ();
+
+            
 		}
 	}
 }

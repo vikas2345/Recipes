@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converter="clr-namespace:Recipes.Converter"
+    xmlns:effect="clr-namespace:Recipes.Effects"
     xmlns:local="clr-namespace:Recipes.Model"
     Height="200">
     <ContentView Style="{StaticResource overallCellContentStyle}">
@@ -71,7 +72,11 @@
                 FontAttributes="Bold"
                 FontSize="28"
                 Text="{Binding RecipeName}"
-                TextColor="White" />
+                TextColor="White">
+                <Label.Effects>
+                    <effect:ShadowEffect />
+                </Label.Effects>
+            </Label>
 
             <BoxView
                 Grid.Row="2"
